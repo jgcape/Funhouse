@@ -3,24 +3,39 @@
 }
 
 .title{
-  color: white;
+  color: #004d00;
+  text-shadow:
+    4px 4px white;
+    
 }
 .mainText{
-  color:white;
+  color:black;
 }
 
 body {
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
-  background-color: #B783C3;
+  flex-direction: column;  
+  background-image: url("healthy.jpg");
+  background-size: 100%;
+  
+
+}
+
+backgroundimage {
+  background-image: url("healthy.jpg");
+  background-size: 100%;
+  opacity: 50%;
 
 }
 
 .page-footer{
-  background-color: #9E65A9;
+  background-color: #004d00;
+  text-align: left;
 }
 main {
   flex: 1 0 auto;
 }
+
+
     
