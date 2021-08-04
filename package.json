@@ -1,22 +1,24 @@
 {
-  "name": "sit725-2021-t2-prac3",
+  "name": "sit725-2021-t2-prac2",
   "version": "1.0.0",
-  "description": "Prac 3 for SIT725, continuing to develop personal website.",
-  "main": "index.js",
+  "description": "My second repo!",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
+      "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jgcape/sit725-2021-t2-prac3.git"
+    "url": "git@github.com:jgcape/sit725-2021-t2-prac3.git"
   },
-  "author": "Julian Cape",
-  "license": "ISC",
+  "author": "",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jgcape/sit725-2021-t2-prac3/issues"
+    "url": "https://github.com/jgcape/sit725-2021-t2-prac2/issues"
   },
-  "homepage": "https://github.com/jgcape/sit725-2021-t2-prac3#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/jgcape/sit725-2021-t2-prac2#readme"
 }
