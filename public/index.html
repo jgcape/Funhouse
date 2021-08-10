@@ -11,69 +11,126 @@
     <meta name="description" content="Artificial Environments home page">
     <meta name="author" content="SitePoint">
 
-    <meta property="og:title" content="SIT 725 Prac 2">
+    <meta property="og:title" content="SIT 725 Prac 4">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Artificial Environments home page">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Custom Style Sheet-->
     <link href="styles.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nav-wrapper" style=" background-color:#004d00;">
-                <a href="#" class="brand-logo" style="height: 100%;">
-                    <img src="GETTREEPICTURE.jpg" alt="" class="circle responsive-img"
-                        style="height: 100%;padding-top: 5px; padding-left: 15px;">
-                    <!-- notice the "circle" class, suitable image pending-->
+    <nav>
+        <div class="nav-wrapper" style=" background-color:#004d00;">
+            <a href="#" class="brand-logo" style="height: 100%;">
+                <img src="GETTREEPICTURE.jpg" alt="" class="circle responsive-img"
+                    style="height: 100%;padding-top: 5px; padding-left: 15px;">
+                <!-- notice the "circle" class, suitable image pending-->
 
-                </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="technology.html">Technology</a></li>
-                    <li><a href="customers.html">Customers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <main>
+
+    <main class="main-body">
 
         <div class="container">
             <h1 class="title">ARTIFICIAL ENVIRONMENTS</h1>
             <div class="row">
-                <p class="flow-text mainText">Welcome to Artificial Environments, providers of AI-powered environmental rehabilitation. We develop restoration plans for degraded environments by combining the latest drone and AI technology.</p>
-            </div>          
-                     
+                <p class="flow-text mainText">Welcome to Artificial Environments, providers of AI-powered environmental
+                    rehabilitation. We develop restoration plans by for degraded environments using the latest data
+                    analysis techniques
+                    to customise our rehabilitation strategies.</p>
+            </div>
+            <div class="row">
+                <p class="flow-text mainText">Sign up to our mailing list for regular updates on our projects. For
+                    more information go to our services page for a working example of the analysis techniques we use.
+                </p>
+            </div>
+            <div class="col s12 center-align">
+                <a class="waves-effect waves-light btn main-button modal-trigger" onclick="$('#modal1').modal('open');" id="clickMeButton"
+                    data-target="modal1"><i class="material-icons left">email</i>Sign up to Mailing List</a>
+                <!-- <a class="waves-effect waves-light btn main-button modal-trigger" id="sdfsfclickMeButton"
+                    data-target="modal3451"><i class="material-icons left">equalizer</i>data analysis</a> -->
+            </div>
+        </div>
+        <!-- Modal Trigger -->
+        <button data-target="modal2" onclick="toggleModal();" class="btn modal-trigger">Modal</button>
+
+        <!-- Modal Structure -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
         </div>
 
-    </main>    
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="row modal-content">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 center-align">
+                            <a class="waves-effect waves-light btn" id="formSubmit">submit</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
+
+    </main>
+    
+
 
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                © 2020 Copyright Artificial Environments                
+                © 2021 Copyright Artificial Environments
             </div>
         </div>
     </footer>
-
-    <!-- socket IO Served by the server -->
-    <script src="/socket.io/socket.io.js"></script>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/scripts.js"></script>
 
 </body>
+
 
 </html>

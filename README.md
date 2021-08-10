@@ -1,4 +1,12 @@
-# sit725-2021-t2-prac3
+# sit725-2021-t2-prac4
+
+Changes 8/8/2021
+
+Imported prac3 repo.
+
+Added functionality to upload data to a mongoDB server.
+
+
 
 Changes 4/8/2021
 
