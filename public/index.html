@@ -1,136 +1,172 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Artificial Environments</title>
-    <meta name="description" content="Artificial Environments home page">
-    <meta name="author" content="SitePoint">
-
-    <meta property="og:title" content="SIT 725 Prac 4">
+    <title>Julian's Funhouse</title>
+    <meta property="og:title" content="SIT 725 Prac 5">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Artificial Environments home page">
+    <meta property="og:description" content="Julian's Funhouse home page">
 
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Materialze-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Materialize icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom Style Sheet-->
     <link href="styles.css" rel="stylesheet">
-
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper" style=" background-color:#004d00;">
-            <a href="#" class="brand-logo" style="height: 100%;">
-                <img src="GETTREEPICTURE.jpg" alt="" class="circle responsive-img"
-                    style="height: 100%;padding-top: 5px; padding-left: 15px;">
-                <!-- notice the "circle" class, suitable image pending-->
-
-            </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-
-    <main class="main-body">
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo" style="height: 100%;">
+                    <img src="" alt="" class="circle responsive-img"
+                        style="height: 100%;padding-top: 5px; padding-left: 15px;">
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="https://www.linkedin.com/in/juliancape">Linkedin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
 
         <div class="container">
-            <h1 class="title">ARTIFICIAL ENVIRONMENTS</h1>
+            <h1 class="title"><img id="headshot" class="clown" src="assets/julian.jpg">Julian's Funhouse<img
+                    id="headshot2" class="clown" src="assets/julian.jpg"></h1>
             <div class="row">
-                <p class="flow-text mainText">Welcome to Artificial Environments, providers of AI-powered environmental
-                    rehabilitation. We develop restoration plans by for degraded environments using the latest data
-                    analysis techniques
-                    to customise our rehabilitation strategies.</p>
+                <p class="flow-text mainText">Welcome to Julian's funhouse! I'm Julian, a student studying applied
+                    software engineering at Deakin Univeristy. I've made this website to showcase some of the skills
+                    I've learnt throughout Trimester 2, 2021. I hope you enjoy it! My fancy hairdo up there is an
+                    example of an image being emitted via a socket.</p>
             </div>
             <div class="row">
-                <p class="flow-text mainText">Sign up to our mailing list for regular updates on our projects. For
-                    more information go to our services page for a working example of the analysis techniques we use.
+                <p class="flow-text mainText">Sign up to our mailing list for regular updates on our games. The mailing
+                    list demonstrates linking to a database and using update and delete functions.
                 </p>
-            </div>
-            <div class="col s12 center-align">
-                <a class="waves-effect waves-light btn main-button modal-trigger" onclick="$('#modal1').modal('open');" id="clickMeButton"
-                    data-target="modal1"><i class="material-icons left">email</i>Sign up to Mailing List</a>
-                <!-- <a class="waves-effect waves-light btn main-button modal-trigger" id="sdfsfclickMeButton"
-                    data-target="modal3451"><i class="material-icons left">equalizer</i>data analysis</a> -->
-            </div>
-        </div>
-        <!-- Modal Trigger -->
-        <button data-target="modal2" onclick="toggleModal();" class="btn modal-trigger">Modal</button>
 
-        <!-- Modal Structure -->
-        <div id="modal2" class="modal">
-            <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
+                <a id="testButton" class="waves-effect waves-light btn main-button modal-trigger" href="#modal1"><i
+                        class="material-icons left">email</i>Sign up to Mailing
+                    List</a>
             </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-        </div>
 
-        <div id="modal1" class="modal modal-fixed-footer">
-            <div class="row modal-content">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                            <label for="first_name">First Name</label>
+            <div class="container">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons coloured">format_list_bulleted</i>View the Mailing List Members
                         </div>
-                        <div class="input-field col s6">
-                            <input id="last_name" type="text" class="validate">
-                            <label for="last_name">Last Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 center-align">
-                            <a class="waves-effect waves-light btn" id="formSubmit">submit</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        
+                        <div class="collapsible-body">
 
+                            <div class="center-align">
+                                <div class="container">
+                                    <div class="row" id="listSubscribers">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="row" id="listProjects">
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="container">
+            <h1 class="title"><img class="clown" src="assets/pacman.png"> PACMAN!!!! <img class="clown"
+                    src="assets/pacman.png"></h1>
+            <div class="row">
+                <p class="flow-text mainText">This HTML5 verison of pacman wasn't made by me but pacman is awesome!
+                    Enjoy!</p>
+            </div>
+            <p class="codepen" data-height="713" data-default-tab="result" data-slug-hash="QWMLOdr"
+                data-user="deeplikeafish"
+                style="height: 713px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/deeplikeafish/pen/QWMLOdr">
+                        HTML5 Pacman</a> by Julian Cape (<a href="https://codepen.io/deeplikeafish">@deeplikeafish</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+
+        </div>
 
     </main>
-    
-
-
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                © 2021 Copyright Artificial Environments
+                © 2021 Copyright Julian's Funhouse
+                <a class="grey-text text-lighten-4 right" href="https://github.com/juliancape"><img
+                        src="assets/git-logo.svg" style="height: 20px; padding-right: 15px;"></i></a>
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/scripts.js"></script>
 
+    <!-- socket IO Served by the server -->
+    <script src="/socket.io/socket.io.js"></script>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="env.js"></script>
+    <script
+        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 </body>
 
-
 </html>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Sign Up to Our Monthly Newsletter!</h4>
+        <p></p>
+        <div class="row">
+            <div class="input-field col s12">
+                <input value="" id="name" type="text" class="validate">
+                <label class="name" for="name">Name</label>
+            </div>
+            <div class="input-field col s12">
+                <input value="" id="email" type="text" class="validate">
+                <label class="email" for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+                <input value="" id="description" type="text" class="validate">
+                <label class="description" for="description">What kind of games are you into?</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a onclick="newSubscriber()" href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+</div>
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <h4>Update your email address.</h4>
+        <p></p>
+        <div class="row">
+            <div class="input-field col s12">
+                <input value="" id="updateEmail" type="text" placeholder="Enter new email address" class="validate">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a onclick="updateEmail()" href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+        </div>
+    </div>
+</div>

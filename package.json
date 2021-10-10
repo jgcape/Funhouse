@@ -1,26 +1,27 @@
 {
-  "name": "sit725-2021-t2-prac4",
-  "version": "1.0.0",
-  "description": "My prac 4 repo, continuing to develop my personal services website.",
-  "main": "server.js",
+  "name": "DDEAD",
+  "version": "0.0.0",
   "dependencies": {
-    "express": "^4.17.1",
-    "jquery": "^3.6.0",
-    "materialize-css": "^1.0.0-rc.2"
+    "body-parser": "^1.19.0",
+    "cf-deployment-tracker-client": "*",
+    "commander": "^2.6.0",
+    "express": "^4.14.1",
+    "http-post": "^0.1.1",
+    "http-proxy": "^1.18.1",
+    "mongodb": "^3.6.6",
+    "mongoose": "^6.0.9",
+    "react-modal": "^3.14.3",
+    "socket.io": "^2.4.1"
   },
-  "devDependencies": {},
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jgcape/sit725-2021-t2-prac4.git"
+    "url": "https://github.com/jgcape/sit725-2021-t2-prac5.git"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jgcape/sit725-2021-t2-prac4/issues"
-  },
-  "homepage": "https://github.com/jgcape/sit725-2021-t2-prac4#readme"
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
 }

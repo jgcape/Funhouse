@@ -1,25 +1,3 @@
-# sit725-2021-t2-prac4
-
-Changes 8/8/2021
-
-Imported prac3 repo.
-
-Added functionality to upload data to a mongoDB server.
-
-
-
-Changes 4/8/2021
-
-Basic colour scheme and style of the site developed based on wireframe visible in /docs folder.
-
-This repo contains the beginnings of my environmentally minded data consultancy page, Artificial Environments.
-
-The website template is based on a boilerplate found at https://github.com/alexbonti/node-material
-
-The following readme is taken directly from that boilerplate. This will be refined and edited as the project progresses.
-
-ORIGINAL README
-
 Hello by Alessio:
 
 This is my boilerplate for creating simple new applications. 
@@ -171,5 +149,3 @@ started.
 `README.md`
 
 This file!
-
-

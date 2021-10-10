@@ -1,24 +1,47 @@
-var express = require("express");
-var app = express()
+let express = require("express");
+let app = express();
+let dbConnect = require("./dbConnect");
 
-app.use(express.static(__dirname+'/public'))
+let http = require('http').createServer(app);
+let io = require('socket.io')(http);
+//const MongoClient = require('mongodb').MongoClient;
+
+// routes
+let subscribersRoute = require('./routes/subscribers')
+
+
+var port = process.env.PORT || 8080;
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + '/public'));
+app.use('/api/subscribers', subscribersRoute)
 
-app.post("/user/create",(req,res) => {
-    let userData = {}
-    userData.name = req.body.name;
-    userData.age = req.body.age;
-    users.push(userData);
-    res.json({statusCode: 200, data: userData, message:"Created"})
-})
 
-app.get("/user",(req,res) => {
-    res.json({statusCode: 200, data: users, message:"Success"})
-})
+app.get("/test", function (request, response) {
+  var user_name = request.query.user_name;
+  response.end("Hello " + user_name + "!");
+});
 
-var port = process.env.port || 3000;
 
-app.listen(port, ()=>{
-    console.log("Application has started on port: ",port)
-})
+//socket test
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+ 
+  var picture = "assets/julian.jpg"
+  setInterval(() => {    
+    if (picture == "assets/julian.jpg") {
+      picture = "assets/julian2.jpg"
+    }
+    else picture = "assets/julian.jpg"
+
+    socket.emit('new_picture', picture);
+  }, 1000);
+});
+
+
+http.listen(port, () => {
+  console.log("Listening on port ", port);
+});
+
