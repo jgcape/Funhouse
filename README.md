@@ -50,15 +50,9 @@ app.use('/api/subscribers', subscribersRoute)
 files in this repository
 --------------------------------------------------------------------------------
 
-`server.js`
+`server.js` 
 
-The server written with node.js.  This server was adapted from the
-*[example provided in the node docs](http://nodejs.org/api/synopsis.html)*.
-
-The difference is that the port, binding host, and url are determined
-via the [`cfenv` package](https://www.npmjs.org/package/cfenv).  This will
-return appropriate values both when running in Cloud Foundry and when running
-locally.
+The server written with node.js.  Thie file contains the information for the program to run a web server and host the application.
 
 ---
 
@@ -82,16 +76,6 @@ The open source license for this sample; in this case, it's licensed under
 
 ---
 
-`manifest.yml`
-
-This file contains information that's used when you `cf push` the application.
-
-See the Cloud Foundry doc
-*[Deploying with Application Manifests](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html)*
-for more information.
-
----
-
 `package.json`
 
 Standard package.json file for node packages.  This file identifies node package dependencies during `npm install`.
@@ -103,7 +87,7 @@ for more information.
 
 ---
 
-/controllers folder: Controllers contain all the dummy/skeleton callback functions that routes invoke and passes them to the services. The files in this folder are:
+/controllers folder: Controllers contain all the dummy/skeleton callback functions that routes invoke and passes them to the services. Controllers handle the business logic of the application. The files in this folder are:
 
 `index.js` - Describes the controller files for the project, in this case there is just one, the subscribers.js file.
 `subscriberscontroller.js` - Contains all the controllers for the subscribers component of the website.
@@ -120,14 +104,14 @@ for more information.
 
 ---
 
-/routes folder: Contains all the information for the routes of the web site. A route is a section of Express code that associates an HTTP verb (GET, POST, PUT, DELETE, etc.), a URL path/pattern, and a function that is called to handle that pattern.
+/routes folder: Contains all the information for the routes of the web site. A route is a section of Express code that associates an HTTP verb (GET, POST, PUT, DELETE, etc.), a URL path/pattern, and a function that is called to handle that pattern. Responsible for serving endpoints to users.
 
 `index.js` - Describes all the route files for the project, in this case there is just one, the subscribers.js file.
 `subscribers.js` - Contains all the routes for the subscribers component of the website.
 
 ---
 
-/services folder: the services receive the information from the controllers and complete the requests.
+/services folder: the services receive the information from the controllers and complete the requests. Services handle the basic CRUD operations.
 
 `index.js` - Describes all the services files for the project, in this case there is just one, the subscribersService.js file.
 `subscribersService.js` - Contains all the services relating to the subscribers component of the website.
