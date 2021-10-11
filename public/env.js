@@ -8,16 +8,17 @@ const addSubscriber = (subscriber) => {
     success: function (result) {
       alert('Successfully added to mailing list!')
       location.reload();
-    }    
+    }
   });
 }
 
-const newSubscriber=()=>{
+const newSubscriber = () => {
   let name = $('#name').val()
   let email = $('#email').val()
-  let description = $('#description').val()  
-  
-  let subscriber={name,email,description
+  let description = $('#description').val()
+
+  let subscriber = {
+    name, email, description
   }
   // console.log(subscriber)
   addSubscriber(subscriber)
@@ -37,17 +38,13 @@ const testButtonFunction = () => {
   //alert('Thank you for clicking')
 }
 
-// connect to the socket
+
+// Connecting to the socket and updating the images based on what's being emitted by the server.
 
 let socket = io();
-
-
 socket.on('new_picture', (msg) => {
   var oldImg = document.getElementById('headshot');
   var newImg = new Image();
-
-
-
   newImg.src = msg;
   newImg.className = "clown";
   newImg.id = "headshot";
@@ -57,9 +54,6 @@ socket.on('new_picture', (msg) => {
 socket.on('new_picture', (msg) => {
   var oldImg = document.getElementById('headshot2');
   var newImg = new Image();
-
-
-
   newImg.src = msg;
   newImg.className = "clown";
   newImg.id = "headshot2";
@@ -72,11 +66,11 @@ listSubscribers = (subscribers) => {
   subscribers.forEach(subscriber => {
     console.log(subscriber)
     let item = '<div class="card medium col l4">' +
-      '<div class="card-content"><div class = "details">' +
+      '<div class="card-content"><div id = "' + subscriber._id + '" class = "details">' +
       '<span class="card-title">' + subscriber.name + '</span>' +
       '<br><br><p>Email: ' + subscriber.email + '</p>' +
       '<br><p>Games: ' + subscriber.description + '</p><br>' +
-      '<button id="delete" onclick=deleteSubscriber(' + subscriber._id + ') class="waves-effect button btn-small"><i class="material-icons right"></i>delete</button></div>' +
+      '<button id="delete" onclick=deleteSubscriber(this) class="waves-effect button btn-small"><i class="material-icons right"></i>delete</button></div>' +
       '</div></div>'
 
     $('#listSubscribers').append(item)
@@ -84,39 +78,34 @@ listSubscribers = (subscribers) => {
 }
 
 
-const deleteSubscriber = (objID) => {
-
-   $.ajax({
-        url: `/api/subscribers/${objID}`,
-        type: 'DELETE',
-        success: (result) => {
-            alert("Product deleted");
-            location.reload();
-        },
-        error: (err) => {
-            alert(err.message);
-        }
-    });
+const deleteSubscriber = (obj) => {
+  var objID = $(obj).parent().attr("id");
+  $.ajax({
+    url: `/api/subscribers/${objID}`,
+    type: 'DELETE',
+    success: (result) => {
+      console.log(result)
+      alert("Product deleted");
+      location.reload();
+    },
+    error: (err) => {
+      alert(err.message);
+    }
+  });
 };
 
-// INITIALIZATION 
-
+// Start up functions
 $(document).ready(function () {
   console.log('Ready')
   $('.collapsible').collapsible();
 
-  // get data and build the ui component
-  //listProjects(dummyData)
-
-
-  //test get call
+  //Test get call
   $.get('/test?user_name="Sir Julian the Clown"', (result) => {
     console.log(result)
   })
-
   /// modal window initialize
   $('.modal').modal();
+
+  //Populate mailing list
   requestSubscribers()
-
-
 })

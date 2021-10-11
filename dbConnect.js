@@ -1,4 +1,5 @@
-/// Database Connection
+/// Database Connection to mongoDB
+
 const MongoClient = require('mongodb').MongoClient;
 
 const uri = "mongodb+srv://Julian:2AqyFm67DBkc9VOD@cluster0.vcgos.mongodb.net/Funhouse?retryWrites=true&w=majority";
@@ -16,7 +17,6 @@ mongoClient.connect((err,db) => {
  
 
 exports.mongoClient = mongoClient;
-
 
 
 

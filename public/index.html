@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Julian's Funhouse</title>
-    <meta property="og:title" content="SIT 725 Prac 5">
+    <meta property="og:title" content="SIT 725 Prac 6">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Julian's Funhouse home page">
 
@@ -48,7 +48,7 @@
             </div>
             <div class="row">
                 <p class="flow-text mainText">Sign up to our mailing list for regular updates on our games. The mailing
-                    list demonstrates linking to a database and using update and delete functions.
+                    list demonstrates linking to a database with add (sign up) and delete functions.
                 </p>
 
                 <a id="testButton" class="waves-effect waves-light btn main-button modal-trigger" href="#modal1"><i
@@ -76,8 +76,6 @@
                     </li>
                 </ul>
                 <div class="row" id="listProjects">
-
-
                 </div>
             </div>
 
@@ -125,14 +123,16 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <!-- Custom scripts -->
     <script src="env.js"></script>
-    <script
-        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+    <!-- Scripts for codepen to enable pacman -->
+    <script        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 </body>
 
 </html>
 
-<!-- Modal Structure -->
+<!-- Modal Structure for adding a subscriber-->
 <div id="modal1" class="modal">
     <div class="modal-content">
         <h4>Sign Up to Our Monthly Newsletter!</h4>
@@ -154,19 +154,5 @@
     </div>
     <div class="modal-footer">
         <a onclick="newSubscriber()" href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
-</div>
-<div id="modal2" class="modal">
-    <div class="modal-content">
-        <h4>Update your email address.</h4>
-        <p></p>
-        <div class="row">
-            <div class="input-field col s12">
-                <input value="" id="updateEmail" type="text" placeholder="Enter new email address" class="validate">
-            </div>
-        </div>
-        <div class="modal-footer">
-            <a onclick="updateEmail()" href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-        </div>
     </div>
 </div>

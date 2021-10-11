@@ -19,11 +19,16 @@ const insertSubscriber = (subscriber, res) => {
     })
 }
 
-const deleteByID = async (subscriber, res) => {    
-    subscribersCollection.deleteOne({_id: subscriber}).exec();
-    console.log("Subscriber deleted");
-    return deleted
-};
+const deleteByID = (subscriber, res) => {
+    console.log(subscriber)
+    var ObjectId = require('mongodb').ObjectId;
+    objID = new ObjectId(subscriber); // Convert string to mongoDB ObjectID format.
+    subscribersCollection.deleteOne({ _id: objID }, (err, result) => {
+        console.log('Subscriber Deleted', result.deletedCount)
+        // res.send({ result: 200 })
+    })
+}
+
 
 
 module.exports = {

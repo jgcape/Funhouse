@@ -1,12 +1,12 @@
 let express = require("express");
 let app = express();
-let dbConnect = require("./dbConnect");
+// let dbConnect = require("./dbConnect");
 
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
-//const MongoClient = require('mongodb').MongoClient;
 
-// routes
+
+// Routes for subscribers mailing list
 let subscribersRoute = require('./routes/subscribers')
 
 
@@ -16,13 +16,14 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api/subscribers', subscribersRoute)
 
 
-app.get("/test", function (request, response) {
-  var user_name = request.query.user_name;
-  response.end("Hello " + user_name + "!");
-});
+// app.get("/test", function (request, response) {
+//   var user_name = request.query.user_name;
+//   response.end("Hello " + user_name + "!");
+// });
 
 
-//socket test
+//Setting up socket and emitting alternating headshot images every second.
+
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.on('disconnect', () => {
