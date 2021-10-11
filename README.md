@@ -1,52 +1,52 @@
-Hello by Alessio:
+Hello, welcome to Julian's Funhouse!
 
-This is my boilerplate for creating simple new applications. 
-This boilerplate is very basic and should be used as a training ground
-
-It comprises of 
-Jquery for advanced manipulations
-Materialize for the UI interface
-Socket IO for real time comunications
+This is a very simple application designed to showcase some of the skills I (Julian) have learnt 
+during an applied software engineering course at Deakin University.
 
 
-After installing, run the server using
+It utilises multiple libraries, including but not limited to:
 
-    npm start
-
-
-
-If instead, you get something like the following, someone is already
-using the default port of 8080:
-
-    Server running at http://127.0.0.1:8080/
-
-    events.js:72
-        throw er; // Unhandled 'error' event
-                  ^
-    Error: listen EADDRINUSE
-        at errnoException (net.js:901:11)
-        at Server._listen2 (net.js:1039:14)
-        at listen (net.js:1061:10)
-        at Server.listen (net.js:1127:5)
-        ...
-
-Once the server is running, test it by visiting the following URL in your
-browser:
-
-    http://localhost:8080/
-
-Next, test it by visiting the following URL in your
-browser:
-
-    http://localhost:8080/hello
-
-When you visit the above url the content will be Hello World
-
-    Hello World
+Jquery for advanced javascript manipulations;
+Materialize for the UI interface;
+Socket IO for real time comunications (In this case making my fancy hairdo appear!);
+Mocha and Chai for testing; and
+Express - Node web framework.
 
 
+If you're reading this you've either downloaded this application already or are viewing the readme on github. If that's the case
+clone the repo already and prepare to be blown away! ha ha.
+
+The first thing you need to do to run this is have Node.js and NPM installed on your system. Once you've done that, 
+use a terminal to navigate to the folder this is located in and run:
+
+npm install
+
+then
+
+npm start
+
+You should then be able to use a web browser to navigate to http://localhost:8080/ to open the page.
 
 
+If you get an error like the one below the default running port 8080 may already be in use. 
+
+
+            Error: listen EADDRINUSE
+
+
+Close whatever application is using it and try again! If that isn't an option you can navigate to the file server.js and
+change the 8080 in the following bit of code to another number, then try again with the url http://localhost:YOUR NUMBER GOES HERE/.
+If you do decide to change the port you will also need to change it in the code at the top of test/test.js to enable the testing to work.
+
+
+var port = process.env.PORT || 8080;
+app.use(express.json());
+app.use(express.static(__dirname + '/public'));
+app.use('/api/subscribers', subscribersRoute)
+
+
+ 
+       
 files in this repository
 --------------------------------------------------------------------------------
 
@@ -62,37 +62,16 @@ locally.
 
 ---
 
-`.cfignore`
+`.gitignore`
 
-List of file patterns that should **NOT** be uploaded to Bluemix.
+List of file patterns that should **NOT** be uploaded to the git repository.
 
-See the Cloud Foundry doc
-*[Prepare to Deploy an Application](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html)*
-for more information.
 
 In this case, the contents of the file are:
 
-    node_modules
+    /node_modules
 
-This indicates the node modules you installed with `npm install` will **NOT** be
-uploaded to Bluemix.  When your app is "staged" (ie, built on Bluemix during
-`cf push`), an
-`npm install` will be run there to install the required modules.  By avoiding
-sending your node modules when you push your app, your app will be uploaded
-quicker than
-if you **HAD** sent the modules.  But you can send the modules you have installed
-if you like; just delete the `.cfignore` file.
-
----
-
-`.gitignore`
-
-List of file patterns that should **NOT** be stored in git.  If you aren't using
-git, you don't need this file.  And the contents are personal preference.
-
-See the npm google groups topic
-*['node_modules in git' from FAQ](https://groups.google.com/forum/#!topic/npm-/8SRXhD6uMmk)*
-for discussion.
+This indicates the node modules you installed with `npm install`.
 
 ---
 
@@ -115,11 +94,8 @@ for more information.
 
 `package.json`
 
-Standard package.json file for node packages.  You will need this file for two
-reasons:
+Standard package.json file for node packages.  This file identifies node package dependencies during `npm install`.
 
-* identify your node package dependencies during `npm install`
-* identify to Bluemix that this directory contains a node.js application
 
 See the npm doc
 *[package.json](https://npmjs.org/doc/json.html)*
@@ -127,25 +103,56 @@ for more information.
 
 ---
 
-`Procfile`
+/controllers folder: Controllers contain all the dummy/skeleton callback functions that routes invoke and passes them to the services. The files in this folder are:
 
-Used to indicate the command to start the server.
+`index.js` - Describes the controller files for the project, in this case there is just one, the subscribers.js file.
+`subscriberscontroller.js` - Contains all the controllers for the subscribers component of the website.
 
-See the Cloud Foundry doc
-*[Tips for Node.js Applications](http://docs.cloudfoundry.org/buildpacks/node/node-tips.html)*
-and the Heroku doc
-*[Process Types and the Procfile](https://devcenter.heroku.com/articles/procfile)*
-for more information.
+---
 
-In this case, the file has a single line:
+/public folder: Contains all the client facing information for the site.
 
-    web: node server
+    /assets folder: Contains the images that are displayed on the site.
 
-This indicates that the command `node server` should be run when the app is
-started.
+`env.js` - Contains the javascript directly related to all of the content on the home page.
+`index.html` - Contains the html for the home page.
+`styles.css` - Contains the styling information for the content of the home page.
+
+---
+
+/routes folder: Contains all the information for the routes of the web site. A route is a section of Express code that associates an HTTP verb (GET, POST, PUT, DELETE, etc.), a URL path/pattern, and a function that is called to handle that pattern.
+
+`index.js` - Describes all the route files for the project, in this case there is just one, the subscribers.js file.
+`subscribers.js` - Contains all the routes for the subscribers component of the website.
+
+---
+
+/services folder: the services receive the information from the controllers and complete the requests.
+
+`index.js` - Describes all the services files for the project, in this case there is just one, the subscribersService.js file.
+`subscribersService.js` - Contains all the services relating to the subscribers component of the website.
+
+---
+
+/test folder: this file contains the javascript that performs automated tests on the website. 
+
+`test.js` - This file contains the javascript that runs three tests. One checking that the socket is correctly connecting to the client, and 
+two that check if the delete functions of the subscribers service are running correctly.
+
+This file can be operated by first running the website on one terminal as mentioned above with the command:
+
+npm start
+
+and then opening another terminal, navigating to the project folder and running the command:
+
+npm test
+
 
 ---
 
 `README.md`
 
 This file!
+
+
+I hope you enjoy Julian's Funhouse!

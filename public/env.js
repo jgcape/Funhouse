@@ -77,9 +77,8 @@ const deleteSubscriber = (obj) => {
     url: `/api/subscribers/${objID}`,
     type: 'DELETE',
     success: (result) => {
-      location.reload();
-      console.log(result)
-      alert("Subscriber deleted");
+      alert('Subscriber deleted.')
+      location.reload();     
 
     },
     error: (err) => {

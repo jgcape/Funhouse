@@ -114,11 +114,8 @@
     <!-- socket IO Served by the server -->
     <script src="/socket.io/socket.io.js"></script>
 
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Jquery for functions -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>       
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -129,31 +126,33 @@
     <!-- Scripts for codepen to enable pacman -->
     <script
         src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+    <!-- Modal Structure for adding a subscriber-->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Sign Up to Our Monthly Newsletter!</h4>
+            <p></p>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input value="" id="name" type="text" class="validate">
+                    <label class="name" for="name">Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input value="" id="email" type="text" class="validate">
+                    <label class="email" for="email">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input value="" id="description" type="text" class="validate">
+                    <label class="description" for="description">What kind of games are you into?</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a onclick="newSubscriber()" href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
-
-<!-- Modal Structure for adding a subscriber-->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4>Sign Up to Our Monthly Newsletter!</h4>
-        <p></p>
-        <div class="row">
-            <div class="input-field col s12">
-                <input value="" id="name" type="text" class="validate">
-                <label class="name" for="name">Name</label>
-            </div>
-            <div class="input-field col s12">
-                <input value="" id="email" type="text" class="validate">
-                <label class="email" for="email">Email</label>
-            </div>
-            <div class="input-field col s12">
-                <input value="" id="description" type="text" class="validate">
-                <label class="description" for="description">What kind of games are you into?</label>
-            </div>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <a onclick="newSubscriber()" href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
-</div>
