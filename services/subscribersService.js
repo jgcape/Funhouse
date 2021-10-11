@@ -12,24 +12,20 @@ const getAllSubscribers = (res) => {
     })
 }
 
-const insertSubscriber = (subscriber, res) => {
-    subscribersCollection.insertOne(subscriber, (err, result) => {
-        console.log('Subscriber Added', result)
-        res.send({ result: 200 })
+const insertSubscriber = (subscriber, res) => {    
+    subscribersCollection.insertOne(subscriber, (err, result) => {        
+        res.send({ result: 200 });
     })
 }
 
 const deleteByID = (subscriber, res) => {
-    console.log(subscriber)
+    console.log("Deleting user with objectID:"+ subscriber)
     var ObjectId = require('mongodb').ObjectId;
-    objID = new ObjectId(subscriber); // Convert string to mongoDB ObjectID format.
-    subscribersCollection.deleteOne({ _id: objID }, (err, result) => {
-        console.log('Subscriber Deleted', result.deletedCount)
-        // res.send({ result: 200 })
+    objID = new ObjectId(subscriber); // Convert stringified ID to mongoDB ObjectID format.
+    subscribersCollection.deleteOne({ _id: objID }, (err, result) => {        
+        console.log('Number of subscribers deleted:', result.deletedCount)              
     })
 }
-
-
 
 module.exports = {
     getAllSubscribers, insertSubscriber, deleteByID

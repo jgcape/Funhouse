@@ -1,11 +1,11 @@
-// send data to the server
+//Add subscribers to database
 const addSubscriber = (subscriber) => {
-  $.ajax({
+  $.ajax({    
     url: '/api/subscribers',
     contentType: 'application/json',
     data: JSON.stringify(subscriber),
     type: 'POST',
-    success: function (result) {
+    success: function (result) {      
       alert('Successfully added to mailing list!')
       location.reload();
     }
@@ -19,27 +19,23 @@ const newSubscriber = () => {
 
   let subscriber = {
     name, email, description
-  }
-  // console.log(subscriber)
+  }  
   addSubscriber(subscriber)
 
 }
 
 const requestSubscribers = () => {
   $.get('/api/subscribers', (subscribers) => {
-    if (subscribers.length > 0) {
-      // console.log(subscribers)
+    if (subscribers.length > 0) {      
       listSubscribers(subscribers)
     }
   })
 }
 
-const testButtonFunction = () => {
-  //alert('Thank you for clicking')
-}
 
 
-// Connecting to the socket and updating the images based on what's being emitted by the server.
+
+// Connecting to the socket and updating the headshot images from those being emitted by the server
 
 let socket = io();
 socket.on('new_picture', (msg) => {
@@ -61,7 +57,7 @@ socket.on('new_picture', (msg) => {
 })
 
 
-//appends the project row with objects of type project 
+//Retrieving the subscribers list from the database and populating cards with subscriber details
 listSubscribers = (subscribers) => {
   subscribers.forEach(subscriber => {
     console.log(subscriber)
@@ -78,15 +74,17 @@ listSubscribers = (subscribers) => {
 }
 
 
+//Function to delete subscribers
 const deleteSubscriber = (obj) => {
   var objID = $(obj).parent().attr("id");
   $.ajax({
     url: `/api/subscribers/${objID}`,
     type: 'DELETE',
     success: (result) => {
-      console.log(result)
-      alert("Product deleted");
       location.reload();
+      console.log(result)
+      alert("Subscriber deleted");
+      
     },
     error: (err) => {
       alert(err.message);
@@ -98,11 +96,7 @@ const deleteSubscriber = (obj) => {
 $(document).ready(function () {
   console.log('Ready')
   $('.collapsible').collapsible();
-
-  //Test get call
-  $.get('/test?user_name="Sir Julian the Clown"', (result) => {
-    console.log(result)
-  })
+ 
   /// modal window initialize
   $('.modal').modal();
 
