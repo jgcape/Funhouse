@@ -1,18 +1,14 @@
 var expect = require("chai").expect;
-var request = require("request");
 var app = "http://localhost:8080"
 var chai = require('chai')
 var chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 
-
-
 var testID = '61638a667b4dd52c2cb84330';
 
 
 var chai = require('chai');
-var should = chai.should();
 var io = require('socket.io-client');
 
 describe("Socket-Server", function () {
@@ -43,13 +39,3 @@ describe("Check DELETE /subscribers", function () {
             });
     })
 });
-// describe("Check POSTing new subscribers", function() {
-//     it("check api returns fail for unauthorized API trigger", function(done) {
-//         chai.request(app)
-//             .post('/api/subscribers')
-//             .end(function (err, res) {
-//                 expect(res.body.statusCode).to.equal(400);               
-//                 done();
-//         });
-//     })
-// });

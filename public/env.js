@@ -1,11 +1,11 @@
 //Add subscribers to database
 const addSubscriber = (subscriber) => {
-  $.ajax({    
+  $.ajax({
     url: '/api/subscribers',
     contentType: 'application/json',
     data: JSON.stringify(subscriber),
     type: 'POST',
-    success: function (result) {      
+    success: function (result) {
       alert('Successfully added to mailing list!')
       location.reload();
     }
@@ -19,21 +19,17 @@ const newSubscriber = () => {
 
   let subscriber = {
     name, email, description
-  }  
+  }
   addSubscriber(subscriber)
-
 }
 
 const requestSubscribers = () => {
   $.get('/api/subscribers', (subscribers) => {
-    if (subscribers.length > 0) {      
+    if (subscribers.length > 0) {
       listSubscribers(subscribers)
     }
   })
 }
-
-
-
 
 // Connecting to the socket and updating the headshot images from those being emitted by the server
 
@@ -84,7 +80,7 @@ const deleteSubscriber = (obj) => {
       location.reload();
       console.log(result)
       alert("Subscriber deleted");
-      
+
     },
     error: (err) => {
       alert(err.message);
@@ -96,7 +92,7 @@ const deleteSubscriber = (obj) => {
 $(document).ready(function () {
   console.log('Ready')
   $('.collapsible').collapsible();
- 
+
   /// modal window initialize
   $('.modal').modal();
 

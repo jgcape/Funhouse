@@ -19,7 +19,7 @@ const insertSubscriber = (subscriber, res) => {
 }
 
 const deleteByID = (subscriber, res) => {
-    console.log("Deleting user with objectID:"+ subscriber)
+    console.log("Deleting user with objectID: "+ subscriber)
     var ObjectId = require('mongodb').ObjectId;
     objID = new ObjectId(subscriber); // Convert stringified ID to mongoDB ObjectID format.
     subscribersCollection.deleteOne({ _id: objID }, (err, result) => {        

@@ -14,7 +14,6 @@ mongoClient.connect((err,db) => {
        console.log('[error]',err)
      }
  });
- 
 
 exports.mongoClient = mongoClient;
 
